@@ -70,41 +70,21 @@ const data = {
   ],
 
   projects: [
-    {
-      name: "Product",
-      url: "/product",
-      icon: <Package />,
-    },
-    {
-      name: "Invoice",
-      url: "/invoice",
-      icon: <FileText />,
-    },
-    {
-      name: "Analytics",
-      url: "/analytics",
-      icon: <BarChart3 />,
-    },
-    {
-      name: "Automation",
-      url: "/automation",
-      icon: <Zap />,
-    },
-    {
-      name: "Settings",
-      url: "/settings",
-      icon: <Settings />,
-    },
-    {
-      name: "Security",
-      url: "/security",
-      icon: <ShieldCheck />,
-    },
-    {
-      name: "Help",
-      url: "/help",
-      icon: <CircleHelp />,
-    },
+    // {
+    //   name: "Settings",
+    //   url: "/settings",
+    //   icon: <Settings />,
+    // },
+    // {
+    //   name: "Security",
+    //   url: "/security",
+    //   icon: <ShieldCheck />,
+    // },
+    // {
+    //   name: "Help",
+    //   url: "/help",
+    //   icon: <CircleHelp />,
+    // },
   ],
 }
 

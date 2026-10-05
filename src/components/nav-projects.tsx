@@ -24,7 +24,6 @@ export function NavProjects({
   return (
     <SidebarGroup>
       <SidebarGroupLabel>
-        Tools
       </SidebarGroupLabel>
 
       <SidebarMenu>
