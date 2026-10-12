@@ -230,13 +230,12 @@ function CustomersPage() {
     const q = search.trim().toLowerCase()
 
     const result = customers.filter(
-      (c) =>
+      (c) => 
         (!q ||
           c.name.toLowerCase().includes(q) ||
           c.email.toLowerCase().includes(q)) &&
         (filter === "all" || c.plan === filter),
     )
-
     return [...result].sort((a, b) =>
       sort === "name"
         ? a.name.localeCompare(b.name)
@@ -578,7 +577,6 @@ function CustomersPage() {
                 <TableBody>
                   {visible.map((customer, index) => (
                     <TableRow key={customer.id}>
-
                       <TableCell className="px-3">
                         <Checkbox
                           checked={selected.includes(customer.id)}

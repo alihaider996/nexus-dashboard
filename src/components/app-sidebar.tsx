@@ -3,24 +3,17 @@
 import * as React from "react"
 
 import { NavMain } from "@/components/nav-main"
-import { NavProjects } from "@/components/nav-projects"
 import { NavSupport } from "@/components/nav-support"
 import { NavUser } from "@/components/nav-user"
 import { TeamSwitcher } from "@/components/team-switcher"
 
 import {
-  BarChart3,
   Boxes,
-  CircleHelp,
   CreditCard,
-  FileText,
   LayoutDashboard,
   MessageSquare,
-  Package,
-  Settings,
-  ShieldCheck,
   Users,
-  Zap,
+  ClipboardCheck,
 } from "lucide-react"
 
 import {
@@ -40,9 +33,9 @@ const data = {
 
   teams: [
     {
-      name: "Nexus",
+      name: "Flow",
       logo: <Boxes />,
-      plan: "SaaS Platform",
+      plan: "Business platform",
     },
   ],
 
@@ -67,24 +60,11 @@ const data = {
       url: "/message",
       icon: <MessageSquare />,
     },
-  ],
-
-  projects: [
-    // {
-    //   name: "Settings",
-    //   url: "/settings",
-    //   icon: <Settings />,
-    // },
-    // {
-    //   name: "Security",
-    //   url: "/security",
-    //   icon: <ShieldCheck />,
-    // },
-    // {
-    //   name: "Help",
-    //   url: "/help",
-    //   icon: <CircleHelp />,
-    // },
+    {
+      title: "Onboarding",
+      url: "/onboarding",
+      icon: <ClipboardCheck />,
+    },
   ],
 }
 
@@ -103,10 +83,7 @@ export function AppSidebar({
       <SidebarContent>
         <NavMain items={data.navMain} />
 
-        <NavProjects projects={data.projects} />
-        
-          <NavSupport />
-
+        <NavSupport />
       </SidebarContent>
 
       <SidebarFooter>

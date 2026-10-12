@@ -1,9 +1,7 @@
 import { Link } from "@tanstack/react-router"
 
 import {
-  CircleHelp,
   Settings,
-  ShieldCheck,
 } from "lucide-react"
 
 import {
@@ -20,17 +18,9 @@ const supportItems = [
     url: "/settings",
     icon: Settings,
   },
-  {
-    title: "Security",
-    url: "/security",
-    icon: ShieldCheck,
-  },
-  {
-    title: "Help",
-    url: "/help",
-    icon: CircleHelp,
-  },
+
 ]
+
 
 export function NavSupport() {
   return (

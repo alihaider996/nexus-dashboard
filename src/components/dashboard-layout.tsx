@@ -6,6 +6,8 @@ import {
   Search,
 } from "lucide-react"
 
+import { useLocation } from "@tanstack/react-router"
+
 import { AppSidebar } from "@/components/app-sidebar"
 import { Header } from "@/components/header"
 import { ThemeSwitch } from "@/components/theme-switch"
@@ -33,6 +35,26 @@ type DashboardLayoutProps = {
 export function DashboardLayout({
   children,
 }: DashboardLayoutProps) {
+  const location = useLocation()
+
+  const pageTitles: Record<string, string> = {
+    "/": "Dashboard",
+    "/payments": "Payments",
+    "/customers": "Customers",
+    "/message": "Message",
+    "/onboarding": "Onboarding",
+    "/product": "Products",
+    "/invoice": "Invoices",
+    "/analytics": "Analytics",
+    "/automation": "Automation",
+    "/settings": "Settings",
+    "/security": "Security",
+    "/help": "Help",
+  }
+
+  const currentPage =
+    pageTitles[location.pathname] ?? "Dashboard"
+
   return (
     <SidebarProvider>
       <AppSidebar />
@@ -55,7 +77,7 @@ export function DashboardLayout({
 
                   <BreadcrumbItem>
                     <BreadcrumbPage>
-                      Dashboard
+                      {currentPage}
                     </BreadcrumbPage>
                   </BreadcrumbItem>
                 </BreadcrumbList>

@@ -16,6 +16,7 @@ import { Route as CustomersRouteImport } from './routes/customers'
 import { Route as HelpRouteImport } from './routes/help'
 import { Route as InvoiceRouteImport } from './routes/invoice'
 import { Route as MessageRouteImport } from './routes/message'
+import { Route as OnboardingRouteImport } from './routes/onboarding'
 import { Route as PaymentsRouteImport } from './routes/payments'
 import { Route as ProductRouteImport } from './routes/product'
 import { Route as SecurityRouteImport } from './routes/security'
@@ -56,6 +57,11 @@ const MessageRoute = MessageRouteImport.update({
   path: '/message',
   getParentRoute: () => rootRouteImport,
 } as any)
+const OnboardingRoute = OnboardingRouteImport.update({
+  id: '/onboarding',
+  path: '/onboarding',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PaymentsRoute = PaymentsRouteImport.update({
   id: '/payments',
   path: '/payments',
@@ -85,6 +91,7 @@ export interface FileRoutesByFullPath {
   '/help': typeof HelpRoute
   '/invoice': typeof InvoiceRoute
   '/message': typeof MessageRoute
+  '/onboarding': typeof OnboardingRoute
   '/payments': typeof PaymentsRoute
   '/product': typeof ProductRoute
   '/security': typeof SecurityRoute
@@ -98,6 +105,7 @@ export interface FileRoutesByTo {
   '/help': typeof HelpRoute
   '/invoice': typeof InvoiceRoute
   '/message': typeof MessageRoute
+  '/onboarding': typeof OnboardingRoute
   '/payments': typeof PaymentsRoute
   '/product': typeof ProductRoute
   '/security': typeof SecurityRoute
@@ -112,6 +120,7 @@ export interface FileRoutesById {
   '/help': typeof HelpRoute
   '/invoice': typeof InvoiceRoute
   '/message': typeof MessageRoute
+  '/onboarding': typeof OnboardingRoute
   '/payments': typeof PaymentsRoute
   '/product': typeof ProductRoute
   '/security': typeof SecurityRoute
@@ -127,6 +136,7 @@ export interface FileRouteTypes {
     | '/help'
     | '/invoice'
     | '/message'
+    | '/onboarding'
     | '/payments'
     | '/product'
     | '/security'
@@ -140,6 +150,7 @@ export interface FileRouteTypes {
     | '/help'
     | '/invoice'
     | '/message'
+    | '/onboarding'
     | '/payments'
     | '/product'
     | '/security'
@@ -153,6 +164,7 @@ export interface FileRouteTypes {
     | '/help'
     | '/invoice'
     | '/message'
+    | '/onboarding'
     | '/payments'
     | '/product'
     | '/security'
@@ -167,6 +179,7 @@ export interface RootRouteChildren {
   HelpRoute: typeof HelpRoute
   InvoiceRoute: typeof InvoiceRoute
   MessageRoute: typeof MessageRoute
+  OnboardingRoute: typeof OnboardingRoute
   PaymentsRoute: typeof PaymentsRoute
   ProductRoute: typeof ProductRoute
   SecurityRoute: typeof SecurityRoute
@@ -224,6 +237,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MessageRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/onboarding': {
+      id: '/onboarding'
+      path: '/onboarding'
+      fullPath: '/onboarding'
+      preLoaderRoute: typeof OnboardingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/payments': {
       id: '/payments'
       path: '/payments'
@@ -263,6 +283,7 @@ const rootRouteChildren: RootRouteChildren = {
   HelpRoute: HelpRoute,
   InvoiceRoute: InvoiceRoute,
   MessageRoute: MessageRoute,
+  OnboardingRoute: OnboardingRoute,
   PaymentsRoute: PaymentsRoute,
   ProductRoute: ProductRoute,
   SecurityRoute: SecurityRoute,
